@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!--
+  Customize this policy to fit your own app's needs. For more guidance, see:
+      https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+  Some notes:
+      * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+      * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+      * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+          * Enable inline JS: add 'unsafe-inline' to default-src
+  -->
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: content:">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="theme-color" content="#2196f3">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <title>Theory</title>
+
+  <link rel="stylesheet" href="./css/framework7.min.css">
+  <link rel="stylesheet" href="./css/icons.css">
+  <link rel="stylesheet" href="./css/app.css">
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+<body class="color-theme-black">
+   <div id="app">
+    <!-- Status bar overlay for fullscreen mode-->
+    <div class="statusbar"></div>
+    <!-- Left panel with reveal effect when hidden -->
+    <div class="panel panel-left panel-reveal">
+      <div class="view view-left">
+        <div class="page">
+          <div class="navbar">
+            <div class="navbar-inner sliding">
+              <div class="title">Left Panel</div>
+            </div>
+          </div>
+          <div class="page-content">
+            <div class="block-title">Left View Navigation</div>
+            <div class="list links-list">
+              <ul>
+                <li><a href="/left-page-1/">Left Page 1</a></li>
+                <li><a href="/left-page-2/">Left Page 2</a></li>
+              </ul>
+            </div>
+            <div class="block-title">Control Main View</div>
+            <div class="list links-list">
+              <ul>
+                <li>
+                  <a href="/about/" data-view=".view-main" class="panel-close">About</a>
+                </li>
+                <li>
+                  <a href="/form/" data-view=".view-main" class="panel-close">Form</a>
+                </li>
+                <li>
+                  <a href="#" data-view=".view-main" class="back">Back in history</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Right panel with cover effect -->
+    <div class="panel panel-right panel-cover theme-dark">
+      <div class="view">
+        <div class="page">
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="title">Order Info:</div>
+            </div>
+          </div>
+          <div class="page-content">
+            
+            <form class="list" id="order">
+              <ul>
+                <li>
+                  <div class="item-content item-input">
+                    <div class="item-inner">
+                      <div class="item-title item-label">First Name</div>
+                      <div class="item-input-wrap">
+                        <input type="text" name="fname" placeholder="First Name">
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="item-content item-input">
+                    <div class="item-inner">
+                      <div class="item-title item-label">Last Name</div>
+                      <div class="item-input-wrap">
+                        <input type="text" name="lname" placeholder="Last Name">
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="item-content item-input">
+                    <div class="item-inner">
+                      <div class="item-title item-label">Address:</div>
+                      <div class="item-input-wrap">
+                        <input type="text" name="address1" placeholder="Address">
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="item-content item-input">
+                    <div class="item-inner">
+                      <div class="item-title item-label">Address:</div>
+                      <div class="item-input-wrap">
+                        <input type="text" name="address2" placeholder="Address">
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="item-content item-input">
+                    <div class="item-inner">
+                      <div class="item-title item-label">City:</div>
+                      <div class="item-input-wrap">
+                        <input type="text" name="city" placeholder="City">
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                 <li>
+                    <div class="item-content item-input">
+                      <div class="item-inner">
+                        <div class="item-title item-label">State:</div>
+                        <div class="item-input-wrap">
+                          <select>
+                            <option value="">Select</option>
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DE">Delaware</option>
+                            <option value="DC">District Of Columbia</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NY">New York</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VT">Vermont</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WA">Washington</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WY">Wyoming</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                   <li>
+                    <div class="item-content item-input">
+                      <div class="item-inner">
+                        <div class="item-title item-label">Phone</div>
+                        <div class="item-input-wrap">
+                          <input type="tel" placeholder="Phone"/>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                <li>
+                  <div class="item-content item-input">
+                    <div class="item-inner">
+                      <div class="item-title item-label">E-mail</div>
+                      <div class="item-input-wrap">
+                        <input type="email" name="email" placeholder="E-mail">
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </form>
+            <div class="block block-strong row">
+              <div class="col"><a class="button button-fill color-green convert-form-to-data" href="#">Submit</a></div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Your main view, should have "view-main" class -->
+    <div class="view view-main ios-edges">
+      <!-- Page, data-name contains page name which can be used in callbacks -->
+      <div class="page" data-name="home">
+        <!-- Top Navbar -->
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="title sliding">Theory</div>
+          </div>
+        </div>
+        <!-- Scrollable page content-->
+        <div class="page-content">
+
+         
+            <div class="row">
+              <div class="col-60">
+
+                
+                <div data-pagination='{"el": ".swiper-pagination"}' class="swiper-container swiper-init demo-swiper">
+                  <div class="swiper-pagination"></div>
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+
+                      <div class="image-container whiteBag">
+                        <div class='text-container'>
+                          <svg viewBox="0 0 500 500">
+                            <path id="curve" d="M48,144 C96,133 425,100 436,137 Z" />
+                            <text width="1000">
+                              <textPath class="text" xlink:href="#curve">
+                                
+                              </textPath>
+                            </text>
+                          </svg>
+                        </div>
+                      </div>  
+
+                    </div>
+                    <div class="swiper-slide">
+
+                      <div class="image-container blackBag">
+                        <div class='text-container'>
+                          <svg viewBox="0 0 500 500">
+                            <path id="curve2" d="M48,144 C96,133 425,100 436,137 Z" />
+                            <text width="1000">
+                              <textPath class="text" xlink:href="#curve2">
+                                
+                              </textPath>
+                            </text>
+                          </svg>
+                        </div>
+                      </div>  
+
+                    </div>
+                  </div>
+
+                </div>
+
+
+              </div>
+              <div class="col-40">
+                <h2 class="title sliding margin-left">Custom Text</h2>
+                <form class="list color-select" id="my-form">
+                    <ul>
+                      <li>
+                        <div class="item-content item-input">
+                          <div class="item-inner">
+                            <div class="item-title item-label">Type Your Text Here:</div>
+                            <div class="item-input-wrap">
+                              <input class="whitebag-text" type="text" name="name" placeholder="Your Text Here" maxlength="10">
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        
+                         <label class="item-radio red item-content">
+                            <input type="radio" name="radio" value="red" />
+                            <i class="icon icon-radio"></i>
+                            <div class="item-inner">
+                              <div class="item-title">Red</div>
+                            </div>
+                          </label>
+                          <label class="item-radio blue item-content">
+                            <input type="radio" name="radio" value="blue" />
+                            <i class="icon icon-radio"></i>
+                            <div class="item-inner">
+                              <div class="item-title">Blue</div>
+                            </div>
+                          </label>
+                          <label class="item-radio black item-content">
+                            <input type="radio" name="radio" value="black" />
+                            <i class="icon icon-radio"></i>
+                            <div class="item-inner">
+                              <div class="item-title">Black</div>
+                            </div>
+                          </label>
+                          <label class="item-radio orange item-content">
+                            <input type="radio" name="radio" value="orange" />
+                            <i class="icon icon-radio"></i>
+                            <div class="item-inner">
+                              <div class="item-title">Orange</div>
+                            </div>
+                          </label>
+                          <label class="item-radio pink item-content">
+                            <input type="radio" name="radio" value="pink" />
+                            <i class="icon icon-radio"></i>
+                            <div class="item-inner">
+                              <div class="item-title">Pink</div>
+                            </div>
+                          </label>
+
+
+                      </li>
+                    </ul>
+                  </form>
+                  <div class="block block-strong row"> 
+                    <div class="col"><a class="button button-raised button-fill fill-form-from-data panel-open" data-panel="right" href="#">Chekout</a></div>
+                  </div>
+              </div>
+            </div>
+        
+
+         
+  </div>
+  <!-- Cordova -->
+  <!--
+  <script src="cordova.js"></script>
+  -->
+  <script type="text/javascript" src="./js/jquery-3.3.1.min.js" ></script>
+  <!-- Framework7 library -->
+  <script src="./js/framework7.min.js"></script>
+
+  <!-- App routes -->
+  <script src="./js/routes.js"></script>
+
+  <!-- Your custom app scripts -->
+  <script src="./js/app.js"></script>
+</body>
+</html>

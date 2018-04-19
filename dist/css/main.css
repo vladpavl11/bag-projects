@@ -1,0 +1,100 @@
+.image-container {
+  position: relative;
+  width: auto;
+  height: auto;
+  min-width: 700px;
+  background-size: contain;
+  min-height: 700px;
+  background-repeat: no-repeat; }
+  .image-container .text-container {
+    position: absolute;
+    font-size: 12px;
+    left: 325px;
+    top: 313px;
+    text-transform: uppercase; }
+
+.whiteBag {
+  background-image: url(../img/front-white.jpg); }
+
+.blackBag {
+  background-image: url(../img/front-black.jpg); }
+
+svg {
+  width: 152px; }
+  svg path {
+    fill: transparent; }
+  svg text {
+    fill: #000;
+    font-size: 48px;
+    letter-spacing: 1.2px; }
+
+.color-select .icon-radio {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  transition-duration: .2s; }
+  .color-select .icon-radio:after {
+    width: 30px;
+    height: 30px;
+    left: 10%;
+    top: 10%; }
+
+.color-select .red .icon-radio {
+  border: 2px solid red !important; }
+  .color-select .red .icon-radio:after {
+    background-color: red; }
+
+.color-select .blue .icon-radio {
+  border: 2px solid blue; }
+  .color-select .blue .icon-radio:after {
+    background-color: blue; }
+
+.color-select .orange .icon-radio {
+  border: 2px solid orange; }
+  .color-select .orange .icon-radio:after {
+    background-color: orange; }
+
+.color-select .black .icon-radio {
+  border: 2px solid black; }
+  .color-select .black .icon-radio:after {
+    background-color: black; }
+
+.color-select .pink .icon-radio {
+  border: 2px solid pink; }
+  .color-select .pink .icon-radio:after {
+    background-color: pink; }
+
+.ios .list .item-content {
+  position: relative; }
+
+.ios .color-select .icon-radio:after {
+  background-color: transparent; }
+
+.ios label.item-radio .item-inner {
+  padding-left: 35px; }
+
+.ios label.item-radio input[type=radio] ~ .icon-radio {
+  position: relative;
+  top: 6px;
+  margin-top: -11px;
+  left: 0; }
+
+.ios .color-theme-black .red.item-radio input[type=radio]:checked ~ .icon-radio {
+  background-image: none;
+  background-color: red !important; }
+
+.ios .color-theme-black .black.item-radio input[type=radio]:checked ~ .icon-radio {
+  background-image: none;
+  background-color: black !important; }
+
+.ios .color-theme-black .orange.item-radio input[type=radio]:checked ~ .icon-radio {
+  background-image: none;
+  background-color: orange !important; }
+
+.ios .color-theme-black .blue.item-radio input[type=radio]:checked ~ .icon-radio {
+  background-image: none;
+  background-color: blue !important; }
+
+.ios .color-theme-black .pink.item-radio input[type=radio]:checked ~ .icon-radio {
+  background-image: none;
+  background-color: pink !important; }

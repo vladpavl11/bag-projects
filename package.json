@@ -1,0 +1,16 @@
+{
+  "name": "bag-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "author": "vlad p.",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp-sass": "^4.0.1"
+  },
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "jquery": "^3.3.1"
+  }
+}
