@@ -1,27 +1,50 @@
 
 .image-container{
 		position:relative;
-		width: auto;
 	    height: auto;
-	    min-width: 700px;
+	    width:626px;
 	    background-size: contain;
 	    min-height: 700px;
 	    background-repeat: no-repeat;
+	    background-position: center;
+	    background-color: #efefef;
+	    display:none;
 	    .text-container{
 			position: absolute;
 			font-size: 12px;
-			left: 325px;
-			top: 313px;
+			left: 321px;
+    		top: 305px;
 			text-transform: uppercase;
 	    }
 }
+.opacityToggle{
+	opacity:0.3;
+}
 .whiteBag{
- 	background-image: url(../img/front-white.jpg);
+ 	background-image: url(../img/whiteBag.jpg);
+}
+.panel{
+	width:400px;
 }
 .blackBag{
-	 background-image: url(../img/front-black.jpg);
+	 background-image: url(../img/blackBag.jpg);
+	 .text-container {
+	    left: 294px;
+    	top: 275px;
+	   }
 }
-
+.item-title{
+	span{
+		font-weight: 800;
+	}
+}
+.swiper-slide{
+	background-color: #f0efeb;
+}
+.active{
+	top:0 !important;
+	display:block;
+}
 svg{
   width:152px;
   path {
@@ -42,17 +65,22 @@ svg{
 	    border-radius: 50%;
 	    transition-duration: .2s;
 	    &:after{
-	    	width: 30px;
-	    	height: 30px;
-	    	left: 10%;
-    		top: 10%;
+	    	width: 26px;
+		    height: 25px;
+		    border: 1px solid;
+		    border-radius: 50%;
+		    left: -1px;
+		    opacity: 0;
+		    top: 0px;
+			transition: all 0.3s ease;
+
 	    }
 	}
-	.red{
+	.white{
 		.icon-radio{
-			border: 2px solid red !important;
+			border: 2px solid white !important;
 			&:after{
-				background-color:red;	
+				background-color:white;	
 			}	
 		}
 
@@ -61,7 +89,7 @@ svg{
 		.icon-radio{
 			border: 2px solid blue;
 			&:after{
-				background-color:blue ;
+				background-color:blue;
 			}	
 		}
 	}
@@ -77,7 +105,7 @@ svg{
 		.icon-radio{
 			border: 2px solid black;
 			&:after{
-				background-color:black ;
+				background-color:black;
 			}	
 		}
 	}
@@ -85,15 +113,93 @@ svg{
 		.icon-radio{
 			border: 2px solid pink;
 			&:after{
-				background-color:pink ;
+				background-color:pink;
+			}	
+		}
+	}
+}
+.md{
+	.white{
+		.icon-radio{
+			&:after{
+				background-color:white !important;	
+			}	
+		}
+
+	}
+	.blue{
+		.icon-radio{
+			&:after{
+				background-color:blue !important;
+			}	
+		}
+	}
+	.orange{
+		.icon-radio{
+			&:after{
+				background-color:orange !important;	
+			}	
+		}
+	}
+	.black{
+		.icon-radio{
+			&:after{
+				background-color:black !important;
+			}	
+		}
+	}
+	.pink{
+		.icon-radio{
+			&:after{
+				background-color:pink !important;
 			}	
 		}
 	}
 }
 .ios {
+	.color-theme-black .black.item-radio input[type=radio]:checked ~ .icon-radio:after, {
+	    content: '';
+	    width: 46px;
+	    height: 45px;
+	    border: 1px solid;
+	    border-radius: 50%;
+	    left: -11px;
+	     opacity:0.7;
+	    top: -10px;
+	}
+	.color-theme-black  .blue.item-radio input[type=radio]:checked ~ .icon-radio:after, {
+	    content: '';
+	    width: 46px;
+	    height: 45px;
+	    border: 1px solid;
+	    border-radius: 50%;
+	    left: -11px;
+	     opacity:0.7;
+	    top: -10px;
+	}
+	.color-theme-black  .white.item-radio input[type=radio]:checked ~ .icon-radio:after, {
+	    content: '';
+	    width: 46px;
+	    height: 45px;
+	    border: 1px solid;
+	    border-radius: 50%;
+	    left: -11px;
+	     opacity:0.7;
+	    top: -10px;
+	}
+	.button.color-white.button-active, .button.color-white.button-fill, .button.color-white.button-fill-ios, .button.color-white.tab-link-activeP{
+		color:black;
+	}
+	.color-theme-black .button.button-fill, .color-theme-black .button.button-fill-ios{
+		border-radius:0;
+	}
+	.checkbox i, .icon-checkbox{
+		border-radius: 0;
+	}
 	.list {
 		.item-content{
 			position: relative;
+			min-height: 50px;
 			
 		}
 	}
@@ -111,9 +217,8 @@ svg{
 	    left: 0;
 	}
 }
-.ios .color-theme-black .red.item-radio input[type=radio]:checked~.icon-radio{
-  background-image:none;
-  background-color:red !important;
+.ios .color-theme-black .white.item-radio input[type=radio]:checked~.icon-radio{
+  background-color:white !important;
 }
 .ios .color-theme-black .black.item-radio input[type=radio]:checked~.icon-radio{
   background-image:none;

@@ -2,15 +2,6 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <!--
-  Customize this policy to fit your own app's needs. For more guidance, see:
-      https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-  Some notes:
-      * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-      * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-      * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-          * Enable inline JS: add 'unsafe-inline' to default-src
-  -->
   <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: content:">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -70,7 +61,7 @@
         <div class="page">
           <div class="navbar">
             <div class="navbar-inner">
-              <div class="title">Order Info:</div>
+              <div class="title">Address Info:</div>
             </div>
           </div>
           <div class="page-content">
@@ -80,9 +71,9 @@
                 <li>
                   <div class="item-content item-input">
                     <div class="item-inner">
-                      <div class="item-title item-label">First Name</div>
+                      <div class="item-title item-label">First Name:</div>
                       <div class="item-input-wrap">
-                        <input type="text" name="fname" placeholder="First Name">
+                        <input type="text" name="fname" placeholder="First Name" required>
                       </div>
                     </div>
                   </div>
@@ -90,9 +81,9 @@
                 <li>
                   <div class="item-content item-input">
                     <div class="item-inner">
-                      <div class="item-title item-label">Last Name</div>
+                      <div class="item-title item-label">Last Name:</div>
                       <div class="item-input-wrap">
-                        <input type="text" name="lname" placeholder="Last Name">
+                        <input type="text" name="lname" placeholder="Last Name" required>
                       </div>
                     </div>
                   </div>
@@ -100,9 +91,9 @@
                 <li>
                   <div class="item-content item-input">
                     <div class="item-inner">
-                      <div class="item-title item-label">Address:</div>
+                      <div class="item-title item-label">Address 1:</div>
                       <div class="item-input-wrap">
-                        <input type="text" name="address1" placeholder="Address">
+                        <input type="text" name="address1" placeholder="Address" required>
                       </div>
                     </div>
                   </div>
@@ -110,7 +101,7 @@
                 <li>
                   <div class="item-content item-input">
                     <div class="item-inner">
-                      <div class="item-title item-label">Address:</div>
+                      <div class="item-title item-label">Address 2:</div>
                       <div class="item-input-wrap">
                         <input type="text" name="address2" placeholder="Address">
                       </div>
@@ -122,7 +113,7 @@
                     <div class="item-inner">
                       <div class="item-title item-label">City:</div>
                       <div class="item-input-wrap">
-                        <input type="text" name="city" placeholder="City">
+                        <input type="text" name="city" placeholder="City" required>
                       </div>
                     </div>
                   </div>
@@ -132,7 +123,7 @@
                       <div class="item-inner">
                         <div class="item-title item-label">State:</div>
                         <div class="item-input-wrap">
-                          <select>
+                          <select required>
                             <option value="">Select</option>
                             <option value="AL">Alabama</option>
                             <option value="AK">Alaska</option>
@@ -193,9 +184,19 @@
                    <li>
                     <div class="item-content item-input">
                       <div class="item-inner">
-                        <div class="item-title item-label">Phone</div>
+                        <div class="item-title item-label">Zip:</div>
                         <div class="item-input-wrap">
-                          <input type="tel" placeholder="Phone"/>
+                          <input type="tel" placeholder="Zip"/ required>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                   <li>
+                    <div class="item-content item-input">
+                      <div class="item-inner">
+                        <div class="item-title item-label">Phone:</div>
+                        <div class="item-input-wrap">
+                          <input type="tel" placeholder="Phone"/ required>
                         </div>
                       </div>
                     </div>
@@ -203,9 +204,9 @@
                 <li>
                   <div class="item-content item-input">
                     <div class="item-inner">
-                      <div class="item-title item-label">E-mail</div>
+                      <div class="item-title item-label">E-mail:</div>
                       <div class="item-input-wrap">
-                        <input type="email" name="email" placeholder="E-mail">
+                        <input type="email" name="email" placeholder="E-mail" required>
                       </div>
                     </div>
                   </div>
@@ -213,7 +214,7 @@
               </ul>
             </form>
             <div class="block block-strong row">
-              <div class="col"><a class="button button-fill color-green convert-form-to-data" href="#">Submit</a></div>
+              <div class="col"><a class="button button-fill color-white convert-form-to-data" href="#">Submit</a></div>
             </div>
 
 
@@ -237,20 +238,14 @@
 
          
             <div class="row">
-              <div class="col-60">
-
-                
-                <div data-pagination='{"el": ".swiper-pagination"}' class="swiper-container swiper-init demo-swiper">
-                  <div class="swiper-pagination"></div>
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-
-                      <div class="image-container whiteBag">
-                        <div class='text-container'>
+              <div class="col-60 ">
+                <!-- White bag -->
+                      <div class="image-container whiteBag active">
+                        <div class='text-container zoomTarget' data-targetsize="0.35" data-duration="600">
                           <svg viewBox="0 0 500 500">
                             <path id="curve" d="M48,144 C96,133 425,100 436,137 Z" />
-                            <text width="1000">
-                              <textPath class="text" xlink:href="#curve">
+                            <text width="1000" >
+                              <textPath class="whiteBagtxt" xlink:href="#curve" startOffset="21%" text-anchor="middle">
                                 
                               </textPath>
                             </text>
@@ -258,15 +253,13 @@
                         </div>
                       </div>  
 
-                    </div>
-                    <div class="swiper-slide">
-
-                      <div class="image-container blackBag">
+                  <!-- Black Bag  -->
+                      <div class="image-container blackBag ">
                         <div class='text-container'>
                           <svg viewBox="0 0 500 500">
-                            <path id="curve2" d="M48,144 C96,133 425,100 436,137 Z" />
+                            <path id="curve2" d="M100,252 C482,222 101,249 483,221 Z" />
                             <text width="1000">
-                              <textPath class="text" xlink:href="#curve2">
+                              <textPath class="blackBagTxt" xlink:href="#curve2" startOffset="21%" text-anchor="middle">
                                 
                               </textPath>
                             </text>
@@ -274,72 +267,125 @@
                         </div>
                       </div>  
 
-                    </div>
-                  </div>
-
-                </div>
-
-
-              </div>
+               </div>   
               <div class="col-40">
-                <h2 class="title sliding margin-left">Custom Text</h2>
-                <form class="list color-select" id="my-form">
-                    <ul>
-                      <li>
-                        <div class="item-content item-input">
-                          <div class="item-inner">
-                            <div class="item-title item-label">Type Your Text Here:</div>
-                            <div class="item-input-wrap">
-                              <input class="whitebag-text" type="text" name="name" placeholder="Your Text Here" maxlength="10">
-                            </div>
+
+              <div class="list accordion-list">
+                  <ul>
+                      <li class="accordion-item accordion-item-opened">
+                          <a href="" class="item-link item-content accordion-active" data-slide="whiteBag">
+                              <div class="item-inner">
+                                  <div class="item-title"><span>Label 1:</span> White Canvas</div>
+                              </div>
+                          </a>
+                          <div class="accordion-item-content">
+                            <form class="list color-select" id="whiteLabel">
+                                    <ul>
+                                      <li>
+                                        <div class="item-content item-input">
+                                          <div class="item-inner">
+                                            <div class="item-title item-label">Select up to ten characters for your customized label:</div>
+                                            <div class="item-input-wrap">
+                                              <input class="whitebag-text" type="text" name="name" placeholder="Your Text Here" maxlength="10">
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </li>
+                                      <li>
+                                        <label class="item-checkbox optoutWhite item-content">
+                                          <input type="checkbox" name="checkbox" value="optoutWhite"/>
+                                          <i class="icon icon-checkbox"></i>
+                                          <div class="item-inner">
+                                            <div class="item-title">I do not wish to customize</div>
+                                          </div>
+                                        </label>
+
+                                        <label class="item-radio wb black item-content">
+                                          <input type="radio" name="radio" value="black" />
+                                          <i class="icon icon-radio"></i>
+                                          <div class="item-inner">
+                                            <div class="item-title">Black</div>
+                                          </div>
+                                        </label> 
+                                        <label class="item-radio wb blue item-content">
+                                          <input type="radio" name="radio" value="blue" />
+                                          <i class="icon icon-radio"></i>
+                                          <div class="item-inner">
+                                            <div class="item-title">Blue</div>
+                                          </div>
+                                        </label>
+                                   
+                                </li>
+                              </ul>
+                            </form>
+
+
                           </div>
-                        </div>
                       </li>
-                      <li>
-                        
-                         <label class="item-radio red item-content">
-                            <input type="radio" name="radio" value="red" />
-                            <i class="icon icon-radio"></i>
-                            <div class="item-inner">
-                              <div class="item-title">Red</div>
-                            </div>
-                          </label>
-                          <label class="item-radio blue item-content">
-                            <input type="radio" name="radio" value="blue" />
-                            <i class="icon icon-radio"></i>
-                            <div class="item-inner">
-                              <div class="item-title">Blue</div>
-                            </div>
-                          </label>
-                          <label class="item-radio black item-content">
-                            <input type="radio" name="radio" value="black" />
-                            <i class="icon icon-radio"></i>
-                            <div class="item-inner">
-                              <div class="item-title">Black</div>
-                            </div>
-                          </label>
-                          <label class="item-radio orange item-content">
-                            <input type="radio" name="radio" value="orange" />
-                            <i class="icon icon-radio"></i>
-                            <div class="item-inner">
-                              <div class="item-title">Orange</div>
-                            </div>
-                          </label>
-                          <label class="item-radio pink item-content">
-                            <input type="radio" name="radio" value="pink" />
-                            <i class="icon icon-radio"></i>
-                            <div class="item-inner">
-                              <div class="item-title">Pink</div>
-                            </div>
-                          </label>
+                           <li class="accordion-item">
+                                <a href="" class="item-link item-content" data-slide="blackBag">
+                                    <div class="item-inner">
+                                        <div class="item-title"><span>Label 2:</span> Black Canvas</div>
+                                    </div>
+                                </a>
+                                <div class="accordion-item-content">
+                                      <form class="list color-select" id="whiteLabel">
+                                          <ul>
+                                            <li>
+                                              <div class="item-content item-input">
+                                                <div class="item-inner">
+                                                  <div class="item-title item-label">Select up to ten characters for your customized label:</div>
+                                                  <div class="item-input-wrap">
+                                                    <input class="blackbag-text" type="text" name="name" placeholder="Your Text Here" maxlength="10">
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </li>
+                                         <li>
+                                        <label class="item-checkbox optoutBlack item-content">
+                                          <input type="checkbox" name="checkbox" value="optoutBlack" "/>
+                                          <i class="icon icon-checkbox"></i>
+                                          <div class="item-inner">
+                                            <div class="item-title">I do not wish to customize</div>
+                                          </div>
+                                        </label>
+                                         <label class="item-radio bb white item-content">
+                                            <input type="radio" name="radio" value="white" />
+                                            <i class="icon icon-radio"></i>
+                                            <div class="item-inner">
+                                              <div class="item-title">White</div>
+                                            </div>
+                                          </label>
+                                          <label class="item-radio bb blue item-content">
+                                            <input type="radio" name="radio" value="blue" />
+                                            <i class="icon icon-radio"></i>
+                                            <div class="item-inner">
+                                              <div class="item-title">Blue</div>
+                                            </div>
+                                          </label>
+                                          
+                                        </li>
+                                      </ul>
+                                    </form>
 
-
-                      </li>
-                    </ul>
-                  </form>
-                  <div class="block block-strong row"> 
-                    <div class="col"><a class="button button-raised button-fill fill-form-from-data panel-open" data-panel="right" href="#">Chekout</a></div>
+                             </div>
+                          </li>
+                      </ul>
                   </div>
+
+
+
+
+
+
+
+
+
+             
+                  
+                    <div class="col"><a class="button button-fill fill-form-from-data panel-open" data-panel="right" href="#">Checkout</a>
+                    </div>
+                 
               </div>
             </div>
         
@@ -356,6 +402,10 @@
 
   <!-- App routes -->
   <script src="./js/routes.js"></script>
+
+   <!-- pinch to zoom lib -->
+  <script src="./js/jquery.zoomooz.min.js"></script>
+
 
   <!-- Your custom app scripts -->
   <script src="./js/app.js"></script>

@@ -1,23 +1,44 @@
 .image-container {
   position: relative;
-  width: auto;
   height: auto;
-  min-width: 700px;
+  width: 626px;
   background-size: contain;
   min-height: 700px;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #efefef;
+  display: none; }
   .image-container .text-container {
     position: absolute;
     font-size: 12px;
-    left: 325px;
-    top: 313px;
+    left: 321px;
+    top: 305px;
     text-transform: uppercase; }
 
+.opacityToggle {
+  opacity: 0.3; }
+
 .whiteBag {
-  background-image: url(../img/front-white.jpg); }
+  background-image: url(../img/whiteBag.jpg); }
+
+.panel {
+  width: 400px; }
 
 .blackBag {
-  background-image: url(../img/front-black.jpg); }
+  background-image: url(../img/blackBag.jpg); }
+  .blackBag .text-container {
+    left: 294px;
+    top: 275px; }
+
+.item-title span {
+  font-weight: 800; }
+
+.swiper-slide {
+  background-color: #f0efeb; }
+
+.active {
+  top: 0 !important;
+  display: block; }
 
 svg {
   width: 152px; }
@@ -34,15 +55,19 @@ svg {
   border-radius: 50%;
   transition-duration: .2s; }
   .color-select .icon-radio:after {
-    width: 30px;
-    height: 30px;
-    left: 10%;
-    top: 10%; }
+    width: 26px;
+    height: 25px;
+    border: 1px solid;
+    border-radius: 50%;
+    left: -1px;
+    opacity: 0;
+    top: 0px;
+    transition: all 0.3s ease; }
 
-.color-select .red .icon-radio {
-  border: 2px solid red !important; }
-  .color-select .red .icon-radio:after {
-    background-color: red; }
+.color-select .white .icon-radio {
+  border: 2px solid white !important; }
+  .color-select .white .icon-radio:after {
+    background-color: white; }
 
 .color-select .blue .icon-radio {
   border: 2px solid blue; }
@@ -64,8 +89,63 @@ svg {
   .color-select .pink .icon-radio:after {
     background-color: pink; }
 
+.md .white .icon-radio:after {
+  background-color: white !important; }
+
+.md .blue .icon-radio:after {
+  background-color: blue !important; }
+
+.md .orange .icon-radio:after {
+  background-color: orange !important; }
+
+.md .black .icon-radio:after {
+  background-color: black !important; }
+
+.md .pink .icon-radio:after {
+  background-color: pink !important; }
+
+.ios .color-theme-black .black.item-radio input[type=radio]:checked ~ .icon-radio:after {
+  content: '';
+  width: 46px;
+  height: 45px;
+  border: 1px solid;
+  border-radius: 50%;
+  left: -11px;
+  opacity: 0.7;
+  top: -10px; }
+
+.ios .color-theme-black .blue.item-radio input[type=radio]:checked ~ .icon-radio:after {
+  content: '';
+  width: 46px;
+  height: 45px;
+  border: 1px solid;
+  border-radius: 50%;
+  left: -11px;
+  opacity: 0.7;
+  top: -10px; }
+
+.ios .color-theme-black .white.item-radio input[type=radio]:checked ~ .icon-radio:after {
+  content: '';
+  width: 46px;
+  height: 45px;
+  border: 1px solid;
+  border-radius: 50%;
+  left: -11px;
+  opacity: 0.7;
+  top: -10px; }
+
+.ios .button.color-white.button-active, .ios .button.color-white.button-fill, .ios .button.color-white.button-fill-ios, .ios .button.color-white.tab-link-activeP {
+  color: black; }
+
+.ios .color-theme-black .button.button-fill, .ios .color-theme-black .button.button-fill-ios {
+  border-radius: 0; }
+
+.ios .checkbox i, .ios .icon-checkbox {
+  border-radius: 0; }
+
 .ios .list .item-content {
-  position: relative; }
+  position: relative;
+  min-height: 50px; }
 
 .ios .color-select .icon-radio:after {
   background-color: transparent; }
@@ -79,9 +159,8 @@ svg {
   margin-top: -11px;
   left: 0; }
 
-.ios .color-theme-black .red.item-radio input[type=radio]:checked ~ .icon-radio {
-  background-image: none;
-  background-color: red !important; }
+.ios .color-theme-black .white.item-radio input[type=radio]:checked ~ .icon-radio {
+  background-color: white !important; }
 
 .ios .color-theme-black .black.item-radio input[type=radio]:checked ~ .icon-radio {
   background-image: none;

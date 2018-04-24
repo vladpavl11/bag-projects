@@ -42,42 +42,72 @@ $$('#my-login-screen .login-button').on('click', function () {
   // Alert username and password
   app.dialog.alert('Username: ' + username + '<br>Password: ' + password);
 });
-$(document).ready(function(){
-  var input = $('input.whitebag-text'),
-      label = $('svg > text > textPath');
 
-  input.bind('keydown keypress', function() {
+////jquery custom scripts
+
+$(document).ready(function(){
+  var inputWhite = $('input.whitebag-text'),
+      labelWhite = $('svg > text > .whiteBagtxt'),
+      inputBlack = $('input.blackbag-text'),
+      labelBlak = $('svg > text > .blackBagTxt')
+
+  inputWhite.bind('keydown keypress', function() {
       setTimeout(function() {
-          label.text(input.val());
+          labelWhite.text(inputWhite.val());
       }, 0);
   });
-  
-  $('.item-radio').on('click touchstart', function () {
+   inputBlack.bind('keydown keypress', function() {
+      setTimeout(function() {
+          labelBlak.text(inputBlack.val());
+      }, 0);
+  });
+            
+
+  $('.wb').on('click touchstart', function () {
       var colorValue = $(this).children('input').val();
       console.log(colorValue);
 
       changeFontColor(colorValue);
   });
+   $('.bb').on('click touchstart', function () {
+      var colorValue = $(this).children('input').val();
+      console.log(colorValue);
+
+      changeBbFontColor(colorValue);
+  });
   function changeFontColor(colorValue) {
-    $('svg > text > textPath').css("fill", colorValue);
+    $('svg > text > .whiteBagtxt').css("fill", colorValue);
+  }
+  function changeBbFontColor(colorValue) {
+    $('svg > text > .blackBagTxt').css("fill", colorValue);
   }
 
-  ///checkbox radio
-  // var selectedBox = null;
-  // $(".colorBox").click(function() {
-  //     selectedBox = this.id;
+  // Accordion Image trigger select
 
-  //     $(".colorBox").each(function() {
-  //         if ( this.id == selectedBox )
-  //         {
-  //             this.checked = true;
-  //         }
-  //         else
-  //         {
-  //             this.checked = false;
-  //         };        
-  //     });
-  // });    
+  $(document).on('click','.item-link',function() {
+      var active = $(this).attr("data-slide");
+      if ($(this).hasClass('accordion-active')) {
+      }else{
+
+          $('.item-link').removeClass('accordion-active');
+          $('.image-container').not( document.getElementsByClassName(active)).removeClass('active').animate({opacity: '0'}, 300);
+
+          $(this).addClass('accordion-active');
+                $('.'+active).animate({
+                  opacity: '1',
+                }, 300).addClass('active');          
+       }
+
+    });
+
+  ///optout check boxes
+  $('.optoutWhite').on('click',function() {
+    console.log('sdfs');
+     $('.wb').toggleClass('opacityToggle');
+   });
+  $('.optoutBlack').on('click',function() {
+     $('.bb').toggleClass('opacityToggle');
+   });
 
 
 
